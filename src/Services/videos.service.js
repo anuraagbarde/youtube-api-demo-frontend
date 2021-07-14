@@ -1,9 +1,11 @@
 import axios from 'axios';
-import { EXAMPLE_URL } from '../Utils/constants';
+import { VIDEOS_URL } from '../Utils/constants';
 
-export const videosService = async () => {
+export const getVideos = async (page, query) => {
   try {
-    const {data} = await axios.get(EXAMPLE_URL);
+    let URL = `${VIDEOS_URL}?page=${page}`;
+    if(query?.length) URL += `&searchText=${query}`
+    const { data } = await axios.get(URL);
     return data;
   } catch (err) {
     throw err;
