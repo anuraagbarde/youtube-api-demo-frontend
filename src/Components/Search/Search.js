@@ -15,7 +15,7 @@ const Search = ({ searchText, setSearchText, fetchVideos }) => {
         value={searchText}
         onChange={({target: {value}}) => setSearchText(value)}
       />
-      <Button title="Search" onClick={fetchVideos} />
+      <Button title="Search" onClick={() => fetchVideos(0)} />
     </div>
   );
 };

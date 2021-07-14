@@ -5,6 +5,7 @@
   align-items: center;
   flex-direction: column;
   background-color: #0f0e17;
+  padding-bottom: 5vh;
 }
 
 .videosContainer {
@@ -16,4 +17,9 @@
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 1vw;
+}
+
+.paginationContainer {
+  display: flex;
+  gap: 10px;
 }

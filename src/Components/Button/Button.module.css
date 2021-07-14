@@ -7,3 +7,8 @@
   cursor: pointer;
   border-radius: 10px;
 }
+
+.active {
+  background-color: transparent;
+  border: 2px solid #f25f4c;
+}
