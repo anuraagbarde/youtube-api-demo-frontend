@@ -4,6 +4,7 @@ import styles from "./Home.module.css";
 
 import Header from "../../Components/Header";
 import Search from "../../Components/Search";
+import VideoCard from "../../Components/VideoCard";
 
 import { getVideos } from "../../Services/videos.service";
 
@@ -23,11 +24,17 @@ const Home = () => {
     fetchVideos();
   }, []);
 
+  const displayVideos = videos.map(video => <VideoCard title={video.title} thumbnails={video.thumbnails} />)
+
   return (
     <div className={styles.container}>
       <Header />
 
       <Search />
+
+      <div className={styles.videosContainer}>
+        {displayVideos}
+      </div>
     </div>
   );
 };

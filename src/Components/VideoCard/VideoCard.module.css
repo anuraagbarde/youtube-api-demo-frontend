@@ -1,0 +1,12 @@
+.container {
+  width: 20%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: #fffffe;
+  margin-top: 10px;
+}
