@@ -10,10 +10,11 @@ import { getVideos } from "../../Services/videos.service";
 
 const Home = () => {
   const [videos, setVideos] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   const fetchVideos = async () => {
     try {
-      const { videos } = await getVideos(0, "");
+      const { videos } = await getVideos(0, searchText);
       setVideos(videos);
     } catch (error) {
       console.log(error);
@@ -30,7 +31,7 @@ const Home = () => {
     <div className={styles.container}>
       <Header />
 
-      <Search />
+      <Search searchText={searchText} setSearchText={setSearchText} fetchVideos={fetchVideos}/>
 
       <div className={styles.videosContainer}>
         {displayVideos}

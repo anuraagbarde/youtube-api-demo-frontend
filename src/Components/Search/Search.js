@@ -4,11 +4,18 @@ import Button from "../Button";
 
 import styles from "./Search.module.css";
 
-const Search = () => {
+const Search = ({ searchText, setSearchText, fetchVideos }) => {
   return (
     <div className={styles.container}>
-      <input type="text" name="Query" placeholder="Search for a video!" className={styles.input} />
-      <Button title="Search"/>
+      <input
+        type="text" 
+        name="Query" 
+        placeholder="Search for a video!" 
+        className={styles.input} 
+        value={searchText}
+        onChange={({target: {value}}) => setSearchText(value)}
+      />
+      <Button title="Search" onClick={fetchVideos} />
     </div>
   );
 };
